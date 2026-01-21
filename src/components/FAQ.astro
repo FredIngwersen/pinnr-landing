@@ -1,0 +1,90 @@
+---
+const faqs = [
+  {
+    question: "What is pinnr?",
+    answer:
+      "pinnr is a free app that lets you save, organise, and share lists of places—like restaurants, cafes, and attractions—while traveling.",
+  },
+  {
+    question: "Is pinnr free?",
+    answer:
+      "Yes, pinnr is free to download and use. Premium features may be added in the future.",
+  },
+  {
+    question: "How is pinnr different from Google Maps?",
+    answer:
+      "pinnr uses the same Google Maps places data you know and trust, but makes it easy to organise lists, collaborate with friends, and discover cities in new ways.",
+  },
+  {
+    question: "Can I share my lists with friends?",
+    answer:
+      "Yes! Generate an invite link with viewer or editor permissions. Collaborators see changes in realtime.",
+  },
+  {
+    question: "Do I need to create an account?",
+    answer:
+      "You can browse and explore without an account. To create your own lists or subscribe to others, you'll need to sign up—it only takes a few seconds.",
+  },
+];
+---
+
+<section class="py-16 sm:py-24 px-4 sm:px-6 bg-muted/30">
+  <div class="max-w-3xl mx-auto">
+    <div class="text-center mb-10 sm:mb-14">
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4">
+        Frequently asked questions
+      </h2>
+      <p class="text-muted-foreground text-sm sm:text-base">
+        Everything you need to know about pinnr.
+      </p>
+    </div>
+    <div class="space-y-4">
+      {
+        faqs.map(({ question, answer }) => (
+          <details class="group rounded-2xl border border-border bg-card faq-details">
+            <summary class="flex cursor-pointer items-center justify-between p-5 sm:p-6 font-semibold text-base sm:text-lg [&::-webkit-details-marker]:hidden list-none">
+              {question}
+              <span class="ml-4 shrink-0 text-muted-foreground transition-transform duration-300 ease-out group-open:rotate-45">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M5 12h14" />
+                  <path d="M12 5v14" />
+                </svg>
+              </span>
+            </summary>
+            <div class="faq-content">
+              <div class="px-5 sm:px-6 pb-5 sm:pb-6 pt-0 text-sm sm:text-base text-muted-foreground">
+                {answer}
+              </div>
+            </div>
+          </details>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .faq-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.3s ease-out;
+  }
+
+  .faq-content > div {
+    overflow: hidden;
+  }
+
+  details[open] .faq-content {
+    grid-template-rows: 1fr;
+  }
+</style>

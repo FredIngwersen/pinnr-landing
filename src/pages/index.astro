@@ -1,25 +1,57 @@
 ---
-import '../styles/global.css';
-// Component Imports
-import Button from '../components/Button.astro';
-
-// Full Astro Component Syntax:
-// https://docs.astro.build/basics/astro-components/
+import "../styles/global.css";
+import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import Screenshots from "../components/Screenshots.astro";
+import Problem from "../components/Problem.astro";
+import Features from "../components/Features.astro";
+import FAQ from "../components/FAQ.astro";
+import CTA from "../components/CTA.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro + TailwindCSS</title>
-	</head>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
 
-	<body>
-		<div class="grid place-items-center h-screen content-center">
-			<Button>Tailwind Button in Astro!</Button>
-			<a href="/markdown-page" class="p-4 underline">Markdown is also supported...</a>
-		</div>
-	</body>
+    <!-- SEO -->
+    <title>pinnr — Travel lists that actually work</title>
+    <meta
+      name="description"
+      content="Save, organise, and share your favorite places. pinnr is the place list app for travelers who want local spots, not tourist traps. Download free on iOS and Android."
+    />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="pinnr — Travel lists that actually work" />
+    <meta
+      property="og:description"
+      content="Save, organise, and share your favorite places. pinnr is the place list app for travelers who want local spots, not tourist traps."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://pinnr.app" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="pinnr — Travel lists that actually work" />
+    <meta
+      name="twitter:description"
+      content="Save, organise, and share your favorite places. The place list app for travelers who want local spots, not tourist traps."
+    />
+  </head>
+
+  <body class="bg-background text-foreground antialiased">
+    <Header />
+    <main>
+      <Hero />
+      <Screenshots />
+      <Problem />
+      <Features />
+      <FAQ />
+      <CTA />
+    </main>
+    <Footer />
+  </body>
 </html>

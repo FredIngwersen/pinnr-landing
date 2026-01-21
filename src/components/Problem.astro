@@ -1,0 +1,37 @@
+---
+import { X } from "@lucide/astro";
+
+const problems = [
+  "New saves buried at the bottom",
+  "Sharing is a nightmare",
+  'No way to mark "visited"',
+  "Switching lists? Painful.",
+];
+---
+
+<section class="py-16 sm:py-24 px-4 sm:px-6 bg-muted/50">
+  <div class="max-w-6xl mx-auto">
+    <div class="max-w-2xl mx-auto text-center mb-10 sm:mb-12">
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4">
+        Google Maps lists are broken
+      </h2>
+      <p class="text-muted-foreground text-sm sm:text-base">
+        You've saved 47 places across 6 cities. Good luck finding them.
+      </p>
+    </div>
+    <div
+      class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 max-w-2xl mx-auto"
+    >
+      {
+        problems.map((problem) => (
+          <div class="flex items-center gap-3 bg-background rounded-xl p-4 border border-border">
+            <span class="text-destructive shrink-0">
+              <X class="h-5 w-5" strokeWidth={2} />
+            </span>
+            <span class="text-sm sm:text-base">{problem}</span>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

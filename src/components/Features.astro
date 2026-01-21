@@ -1,0 +1,58 @@
+---
+import { Map, List, Users, Zap } from "@lucide/astro";
+
+const features = [
+  {
+    title: "Explore visually",
+    description:
+      "See all your saves on a map. Tap any pin to view details or get directions.",
+    Icon: Map,
+  },
+  {
+    title: "Smart organisation",
+    description:
+      "Create lists by city, trip, or vibe. Drag to reorder. Mark as visited.",
+    Icon: List,
+  },
+  {
+    title: "Collaborate live",
+    description:
+      "Share a list link with viewer or editor access. Changes sync in realtime.",
+    Icon: Users,
+  },
+  {
+    title: "No friction",
+    description:
+      "Save places instantly. Search, tap, done. Add notes and tags later.",
+    Icon: Zap,
+  },
+];
+---
+
+<section class="py-16 sm:py-24 px-4 sm:px-6">
+  <div class="max-w-6xl mx-auto">
+    <div class="max-w-2xl mx-auto text-center mb-10 sm:mb-14">
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4">
+        Lists that actually work
+      </h2>
+      <p class="text-muted-foreground text-sm sm:text-base">
+        Everything you need. Nothing you don't.
+      </p>
+    </div>
+    <div
+      class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 max-w-3xl mx-auto"
+    >
+      {
+        features.map(({ title, description, Icon }) => (
+          <div class="p-5 sm:p-6 rounded-2xl border border-border bg-card">
+            <div class="h-10 w-10 sm:h-12 sm:w-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-4">
+              <Icon class="h-5 w-5 sm:h-6 sm:w-6" stroke-width="2" />
+            </div>
+            <h3 class="font-semibold text-base sm:text-lg mb-2">{title}</h3>
+            <p class="text-sm text-muted-foreground">{description}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

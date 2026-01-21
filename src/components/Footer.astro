@@ -1,0 +1,31 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="py-8 sm:py-12 px-4 sm:px-6 border-t border-border">
+  <div class="max-w-6xl mx-auto">
+    <div class="flex flex-col items-center gap-6 text-center">
+      <a href="/" class="flex items-center gap-2">
+        <img src="/icon.svg" alt="pinnr" class="h-6 w-6" />
+        <span class="font-medium">pinnr</span>
+      </a>
+      <nav
+        class="flex flex-wrap justify-center items-center gap-x-6 gap-y-2 text-sm text-muted-foreground"
+      >
+        <a href="/privacy" class="hover:text-foreground transition-colors"
+          >Privacy</a
+        >
+        <a href="/terms" class="hover:text-foreground transition-colors"
+          >Terms</a
+        >
+        <a
+          href="mailto:fred@pinnr.app"
+          class="hover:text-foreground transition-colors">Contact</a
+        >
+      </nav>
+      <p class="text-sm text-muted-foreground">
+        &copy; {currentYear} pinnr
+      </p>
+    </div>
+  </div>
+</footer>
