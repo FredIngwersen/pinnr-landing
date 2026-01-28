@@ -15,6 +15,7 @@ import Footer from "../components/Footer.astro";
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/icon.png" />
     <meta name="generator" content={Astro.generator} />
 
     <!-- SEO -->
@@ -23,6 +24,14 @@ import Footer from "../components/Footer.astro";
       name="description"
       content="Save, organise, and share your favorite places. pinnr is the place list app for travelers who want local spots, not tourist traps. Download free on iOS and Android."
     />
+    <link rel="canonical" href="https://pinnr.app/" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#000000" />
+
+    <!-- Geo targeting (worldwide, English-primary) -->
+    <meta name="geo.region" content="US" />
+    <link rel="alternate" hreflang="en" href="https://pinnr.app/" />
+    <link rel="alternate" hreflang="x-default" href="https://pinnr.app/" />
 
     <!-- Open Graph -->
     <meta property="og:title" content="pinnr — Travel lists that actually work" />
@@ -31,7 +40,13 @@ import Footer from "../components/Footer.astro";
       content="Save, organise, and share your favorite places. pinnr is the place list app for travelers who want local spots, not tourist traps."
     />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://pinnr.app" />
+    <meta property="og:url" content="https://pinnr.app/" />
+    <meta property="og:site_name" content="pinnr" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:image" content="https://pinnr.app/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="pinnr - Travel lists that actually work" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -40,6 +55,36 @@ import Footer from "../components/Footer.astro";
       name="twitter:description"
       content="Save, organise, and share your favorite places. The place list app for travelers who want local spots, not tourist traps."
     />
+    <meta name="twitter:image" content="https://pinnr.app/og-image.png" />
+
+    <!-- App links (update when you have store URLs) -->
+    <!-- <meta property="al:ios:app_store_id" content="YOUR_APP_ID" /> -->
+    <!-- <meta property="al:ios:app_name" content="pinnr" /> -->
+    <!-- <meta property="al:android:package" content="app.pinnr" /> -->
+    <!-- <meta property="al:android:app_name" content="pinnr" /> -->
+
+    <!-- Structured Data -->
+    <script is:inline type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "pinnr",
+        "applicationCategory": "TravelApplication",
+        "operatingSystem": "iOS, Android",
+        "description": "Save, organise, and share your favorite places. The place list app for travelers who want local spots, not tourist traps.",
+        "url": "https://pinnr.app",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "5",
+          "ratingCount": "1"
+        }
+      }
+    </script>
   </head>
 
   <body class="bg-background text-foreground antialiased">

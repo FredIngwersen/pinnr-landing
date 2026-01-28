@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://pinnr.app/sitemap-index.xml
