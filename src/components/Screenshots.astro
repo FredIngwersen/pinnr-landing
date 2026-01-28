@@ -2,24 +2,74 @@
 
 ---
 
-<section class="pb-16 sm:pb-24 px-4 sm:px-6">
+<!-- Mobile: Embla carousel with peek effect -->
+<section class="sm:pb-24 sm:hidden relative overflow-x-clip">
+  <div class="embla overflow-x-clip overflow-y-visible pb-16" id="screenshots-carousel">
+    <div class="embla__container flex">
+      <div class="embla__slide shrink-0 pl-[15%] pr-2">
+        <img
+          src="/discover_tab.png"
+          alt="Discover tab showing public lists from the community"
+          class="w-56 rounded-2xl shadow-lg"
+        />
+      </div>
+      <div class="embla__slide shrink-0 px-2">
+        <img
+          src="/explore_tab.png"
+          alt="Explore tab showing map view with pins"
+          class="w-56 rounded-2xl shadow-xl"
+        />
+      </div>
+      <div class="embla__slide shrink-0 pl-2 pr-[15%]">
+        <img
+          src="/list_tab_my_lists.png"
+          alt="Lists tab showing user's saved lists"
+          class="w-56 rounded-2xl shadow-lg"
+        />
+      </div>
+    </div>
+  </div>
+  <!-- Bottom fade gradient -->
+  <div
+    class="absolute bottom-0 left-0 right-0 h-40 bg-linear-to-t from-background from-20% to-transparent pointer-events-none"
+  >
+  </div>
+</section>
+
+<!-- Desktop: Original 3-up fanned layout -->
+<section class="pb-24 px-6 hidden sm:block">
   <div class="max-w-6xl mx-auto">
-    <div class="flex justify-center gap-3 sm:gap-6">
+    <div class="flex justify-center gap-6">
       <img
         src="/discover_tab.png"
         alt="Discover tab showing public lists from the community"
-        class="w-32 sm:w-48 lg:w-56 rounded-2xl sm:rounded-3xl -rotate-6 translate-y-4 shadow-lg"
+        class="w-48 lg:w-56 rounded-3xl -rotate-6 translate-y-4 shadow-lg"
       />
       <img
         src="/explore_tab.png"
         alt="Explore tab showing map view with pins"
-        class="w-36 sm:w-56 lg:w-64 rounded-2xl sm:rounded-3xl z-10 shadow-xl"
+        class="w-56 lg:w-64 rounded-3xl z-10 shadow-xl"
       />
       <img
         src="/list_tab_my_lists.png"
         alt="Lists tab showing user's saved lists"
-        class="w-32 sm:w-48 lg:w-56 rounded-2xl sm:rounded-3xl rotate-6 translate-y-4 shadow-lg"
+        class="w-48 lg:w-56 rounded-3xl rotate-6 translate-y-4 shadow-lg"
       />
     </div>
   </div>
 </section>
+
+<script>
+  import EmblaCarousel from "embla-carousel";
+
+  const emblaNode = document.getElementById("screenshots-carousel");
+  if (emblaNode) {
+    const embla = EmblaCarousel(emblaNode, {
+      align: "center",
+      containScroll: false,
+      startIndex: 1, // Start on the middle slide (Explore)
+      dragFree: false,
+      loop: false,
+    });
+  }
+</script>
